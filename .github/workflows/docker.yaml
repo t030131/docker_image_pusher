@@ -7,10 +7,10 @@ on:
 
 
 env:
-  ALIYUN_REGISTRY: "${{ secrets.ALIYUN_REGISTRY }}"
-  ALIYUN_NAME_SPACE: "${{ secrets.ALIYUN_NAME_SPACE }}"
-  ALIYUN_REGISTRY_USER: "${{ secrets.ALIYUN_REGISTRY_USER }}"
-  ALIYUN_REGISTRY_PASSWORD: "${{ secrets.ALIYUN_REGISTRY_PASSWORD }}"
+  ALIYUN_REGISTRY: "crpi-t3e1lvqi94j9g52x.cn-hangzhou.personal.cr.aliyuncs.com"
+  ALIYUN_NAME_SPACE: "tlj-images"
+  ALIYUN_REGISTRY_USER: "aliyun7099899641"
+  ALIYUN_REGISTRY_PASSWORD: "tujun728.123"
 
 jobs:
 
@@ -57,7 +57,7 @@ jobs:
 
     - name: Build and push image Aliyun
       run: |
-        docker login -u aliyun7099899641 -p tujun728.123 crpi-t3e1lvqi94j9g52x.cn-hangzhou.personal.cr.aliyuncs.com
+        docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $ALIYUN_REGISTRY
         # 数据预处理,判断镜像是否重名
         declare -A duplicate_images
         declare -A temp_map
