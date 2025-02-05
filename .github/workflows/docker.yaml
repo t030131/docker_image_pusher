@@ -10,7 +10,7 @@ env:
   ALIYUN_REGISTRY: "crpi-t3e1lvqi94j9g52x.cn-hangzhou.personal.cr.aliyuncs.com"
   ALIYUN_NAME_SPACE: "tlj-images"
   ALIYUN_REGISTRY_USER: "aliyun7099899641"
-  ALIYUN_REGISTRY_PASSWORD: "tujun728.123"
+  ALIYUN_REGISTRY_PASSWORD: "${{ secrets.ALIYUN_REGISTRY_PASSWORD }}"
 
 jobs:
 
